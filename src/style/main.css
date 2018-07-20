@@ -1,0 +1,9 @@
+@import "main-chicken.css";
+
+body {
+    background-color: darkorange;
+}
+
+.bill{
+    color: orange;
+}
