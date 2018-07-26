@@ -1,11 +1,16 @@
 <!doctype html>
 
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="../src/style/main.css" rel="stylesheet" >
+
+
+  <link href="../src/style/main.css" rel="stylesheet">
+  <link href="../src/style/main-chicken.css" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Eater" rel="stylesheet">
 
@@ -13,9 +18,33 @@
 </head>
 
 <body>
-  <div class="app-wrapper"></div>
-  <h1 class="bill">hey there</h1>
-  <img class="main-chick" src=""></img>
+  <div class="app-wrapper">
+    <img id="mainChick" class="size-norm" onclick="Click()" src="../pics/chicken-sprite-main.png" />
+    <p id="clickNum">Clicks: 0</p>
+  </div>
 </body>
+
+<script>
+  var clicks = document.getElementById("clickNum"),
+  count = 0;
+
+function expand(){
+
+  var element = document.getElementById("mainChick");
+  element.classList.remove("size-up");
+  element.classList.add("size-norm");
+}
+
+function Click() {
+     var element = document.getElementById("mainChick");
+    element.classList.remove("size-norm");
+    element.classList.add("size-up");
+    setTimeout(expand,30);
+    count += 1;
+    clicks.innerHTML = "Clicks: " + count;
+}
+
+
+</script>
 
 </html>
